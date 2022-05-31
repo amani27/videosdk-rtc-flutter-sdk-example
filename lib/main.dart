@@ -1,35 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 
+import 'screens/home_screen.dart';
 import 'constants/colors.dart';
-import 'navigator_key.dart';
-import 'screens/splash_screen.dart';
 
-void main() async {
-  // Load Environment variables
-  await dotenv.load(fileName: ".env");
-
-  // Run Flutter App
-  runApp(const MyApp());
+void main() {
+  runApp(const VideoSDKApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+// VideoSDK App
+class VideoSDKApp extends StatelessWidget {
+  const VideoSDKApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     // Material App
     return MaterialApp(
-      title: 'VideoSDK Flutter Example',
+      // App Title
+      title: 'VideoSDK HLS Demo',
+      // App Theme
       theme: ThemeData.dark().copyWith(
-        appBarTheme: const AppBarTheme().copyWith(
-          color: primaryColor,
-        ),
         primaryColor: primaryColor,
         backgroundColor: secondaryColor,
       ),
-      home: const SplashScreen(),
-      navigatorKey: navigatorKey,
+      // Home Page
+      home: const HomeScreen(),
     );
   }
 }

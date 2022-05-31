@@ -5,15 +5,33 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "videosdk-rtc-flutter-sdk-example",
+            "name": "videosdk_hls_demo",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "videosdk-rtc-flutter-sdk-example (profile mode)",
+            "name": "Samsung Device",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "profile"
+            "deviceId": "RZ8R31AV5BV"
+        },
+        {
+            "name": "Emulator Device 1",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": "emulator-5554"
+        },
+        {
+            "name": "Emulator Device 2",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": "emulator-5556"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "All Devices",
+            "configurations": ["Emulator Device 1", "Emulator Device 2"]
         }
     ]
 }
